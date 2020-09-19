@@ -1,0 +1,11 @@
+*{
+    direction: rtl;
+    text-align: right;
+}
+
+.errors{
+    background-color: tomato;
+    padding: 20px 30px;
+    text-align: center;
+    color: white;
+}

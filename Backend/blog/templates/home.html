@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="{% static 'blog/image/postgersql.png' %}" type="image/icon type">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>os-py</title>
+    <link rel="stylesheet" href="{% static 'blog/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link a-light" href="{% url 'account:login' %}"> login </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link a-light" href="{% url 'account:logout' %}"> logout </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link a-light" href="#">Link 3</a>
+            </li>
+        </ul>
+    </nav>
+        <div class="row">
+            {% for obj in object_list %}
+            <div class="card col-md-2" style=" margin-right: 100px; margin-top: 100px;" >
+                <img class="card-img-top" style="margin-top: 20px; " src=" {{obj.image.url}} " alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{obj.title}}</h5>
+                    <p class="card-text text-info text-center">{{obj.body}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-danger text-center">{{obj.created_at}}</li>
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    <!--<script src="{% static 'bootstrap.js' %}"></script>-->
+</body>
+
+</html>

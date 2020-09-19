@@ -1,0 +1,11 @@
+* {
+    /* text-align: right; */
+    direction: rtl;
+    font-family: Fira Code;
+}
+body{
+    background-color: rgb(202, 237, 253);
+}
+#t-tomato{
+    color: tomato;
+}
